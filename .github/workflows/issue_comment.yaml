@@ -1,0 +1,13 @@
+name: Create Issue Comment
+on:
+  issues:
+    types:
+      - opened # we want to run this whenever an issue is opened
+jobs:
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "dump github context"
+        run: echo '${{ toJSON(github) }}' | jq
+        shell: bash
+      
